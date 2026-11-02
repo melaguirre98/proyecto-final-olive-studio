@@ -1,0 +1,48 @@
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
+
+.pie-pagina {
+  background-color: $color-primario;
+  color: $color-fondo;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  margin-top: 3rem;
+  align-items: center;
+  @include flex-columna(1rem);
+
+  p {
+    color: $color-fondo;
+    font-size: 0.9rem;
+    margin-bottom: 0;
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    padding-left: 0;
+  }
+
+  a {
+    color: $color-acento-claro;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: color $transicion;
+
+    @include hover-foco {
+      color: $color-fondo;
+      text-decoration: underline;
+    }
+
+    &:active {
+      color: $color-blanco;
+    }
+  }
+
+  @include desktop {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1.5rem 2rem;
+  }
+}

@@ -1,0 +1,44 @@
+// Paleta (todos los pares texto/fondo superan 4.5:1 de contraste)
+$color-primario: #2f3e34;
+$color-secundario: #3f5646;
+$color-acento: #b86a45;
+$color-acento-texto: #9a4e2e;
+$color-acento-claro: #e8c2a8;
+$color-fondo: #f6f1ea;
+$color-texto: #2b2b28;
+$color-gris: #5f5f5a;
+$color-blanco: #ffffff;
+
+// Acordeon y formularios
+$color-acordeon-activo: #ece4d6;
+$color-acordeon-borde: #ddd2c0;
+$color-acordeon-hover: #f1eadf;
+$color-acordeon-click: #e3d8c6;
+
+// Tipografias
+$fuente-base: 'Jost', sans-serif;
+$fuente-marca: 'Cormorant Garamond', serif;
+$fuente-h2: 'Cormorant Garamond', serif;
+$fuente-h3: 'Jost', sans-serif;
+
+// Bordes
+$radio-chico: 6px;
+$radio-borde: 8px;
+$radio-imagen: 10px;
+$ancho-acento: 5px;
+
+// Transiciones
+$transicion: 0.3s ease;
+$transicion-rapida: 0.2s ease;
+
+// Animaciones
+$duracion-animacion: 0.6s;
+$retraso-animacion: 0.1s;
+
+// Anchos maximos
+$ancho-contenido: 900px;
+$ancho-contenido-grande: 1100px;
+
+// Breakpoints (mobile-first)
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;

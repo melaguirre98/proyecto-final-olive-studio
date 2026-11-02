@@ -1,0 +1,47 @@
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
+
+// Estilos que comparten todos los botones (se reutiliza con @extend)
+%boton-base {
+  font-weight: 600;
+
+  @include anillo-foco;
+
+  &:active {
+    background-color: $color-primario !important;
+    border-color: $color-primario !important;
+    color: $color-blanco !important;
+    transform: scale(0.97);
+  }
+}
+
+// Mixin con parametros: crea una variante de boton con sus colores
+@mixin boton($fondo, $borde, $texto, $fondo-hover, $texto-hover) {
+  @extend %boton-base;
+
+  background-color: $fondo;
+  border: 2px solid $borde;
+  color: $texto;
+  transition: background-color $transicion, border-color $transicion, color $transicion, transform $transicion-rapida;
+
+  @include hover-foco {
+    background-color: $fondo-hover;
+    border-color: $fondo-hover;
+    color: $texto-hover;
+  }
+}
+
+// Grupo de botones (p.acciones)
+.acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.btn-estudio {
+  @include boton($color-acento-texto, $color-acento-texto, $color-blanco, $color-secundario, $color-blanco);
+}
+
+.btn-estudio-outline {
+  @include boton(transparent, $color-secundario, $color-secundario, $color-secundario, $color-blanco);
+}

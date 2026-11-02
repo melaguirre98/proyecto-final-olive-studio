@@ -1,0 +1,65 @@
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
+
+.galeria-carousel {
+  border-radius: $radio-borde;
+  border-left: $ancho-acento solid $color-acento;
+  overflow: hidden;
+  background-color: $color-primario;
+  transition: box-shadow $transicion;
+
+  &:hover {
+    box-shadow: 0 8px 20px rgba($color-primario, 0.25);
+  }
+
+  .carousel-item img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+
+    @include tablet {
+      height: 340px;
+    }
+
+    @include desktop {
+      height: 380px;
+    }
+  }
+
+  .carousel-caption {
+    background-color: rgba($color-primario, 0.75);
+    border-radius: $radio-chico;
+    padding: 0.4rem 1rem;
+    // Se ajusta al largo del texto y queda centrado
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    width: max-content;
+    max-width: 80%;
+    // Sube el epigrafe para que no se superponga con los indicadores
+    bottom: 3rem;
+
+    p {
+      color: $color-fondo;
+      font-size: 0.9rem;
+      margin-bottom: 0;
+    }
+  }
+
+  .carousel-indicators [data-bs-target] {
+    background-color: $color-acento;
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    transition: background-color $transicion;
+
+    @include hover-foco {
+      background-color: rgba($color-acento, 0.35);
+    }
+
+    &:active {
+      background-color: rgba($color-acento, 0.6);
+    }
+  }
+}

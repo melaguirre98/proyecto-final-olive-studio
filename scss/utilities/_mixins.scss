@@ -1,0 +1,56 @@
+@use "variables" as *;
+
+// Media queries mobile-first
+@mixin tablet {
+  @media (min-width: $breakpoint-tablet) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $breakpoint-desktop) {
+    @content;
+  }
+}
+
+// Layout de pagina con grid-template-areas distinto en cada breakpoint
+@mixin pagina($movil, $tablet, $escritorio, $cols-tablet: 1fr, $cols-escritorio: $cols-tablet) {
+  grid-template-areas: $movil;
+
+  @include tablet {
+    grid-template-areas: $tablet;
+    grid-template-columns: $cols-tablet;
+  }
+
+  @include desktop {
+    grid-template-areas: $escritorio;
+    grid-template-columns: $cols-escritorio;
+  }
+}
+
+// Estados interactivos
+@mixin hover-foco {
+  &:hover,
+  &:focus-visible {
+    @content;
+  }
+}
+
+@mixin anillo-foco {
+  &:focus-visible {
+    outline: 3px solid $color-primario;
+    outline-offset: 2px;
+  }
+}
+
+// Animacion de entrada (nombre, duracion y retraso configurables)
+@mixin animacion($nombre, $duracion: $duracion-animacion, $retraso: 0s) {
+  animation: $nombre $duracion ease-out $retraso both;
+}
+
+// Flex en columna con separacion
+@mixin flex-columna($gap) {
+  display: flex;
+  flex-direction: column;
+  gap: $gap;
+}

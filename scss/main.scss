@@ -1,0 +1,25 @@
+// Unico punto de entrada: solo importa partials (sin codigo propio).
+// El orden importa: primero utilidades, despues base, layout y componentes.
+
+// 1. Utilities
+@use "utilities/variables";
+@use "utilities/mixins";
+
+// 2. Base
+@use "base/tipografia";
+@use "base/base";
+
+// 3. Layout
+@use "layout/header";
+@use "layout/nav";
+@use "layout/grid";
+@use "layout/footer";
+
+// 4. Components
+@use "components/cards";
+@use "components/listado";
+@use "components/buttons";
+@use "components/carousel";
+@use "components/modal";
+@use "components/accordion";
+@use "components/formulario";

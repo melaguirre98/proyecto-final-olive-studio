@@ -1,0 +1,17 @@
+@use "../utilities/variables" as *;
+
+.modal-estudio {
+  background-color: $color-fondo;
+  border-left: $ancho-acento solid $color-acento;
+
+  .modal-title {
+    color: $color-secundario;
+    font-size: 1.4rem;
+    margin-bottom: 0;
+  }
+
+  .list-group-item {
+    background-color: transparent;
+    color: $color-texto;
+  }
+}

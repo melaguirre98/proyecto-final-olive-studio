@@ -1,0 +1,49 @@
+@use "../utilities/variables" as *;
+
+// Reset global
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $color-fondo;
+  overflow-wrap: break-word;
+}
+
+img {
+  max-width: 100%;
+}
+
+address {
+  margin-bottom: 0;
+}
+
+figure {
+  margin: 1.5rem 0;
+  text-align: center;
+
+  img {
+    width: 100%;
+    max-width: 550px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: $radio-borde;
+  }
+}
+
+figcaption {
+  font-size: 0.85rem;
+  color: $color-gris;
+  font-style: italic;
+  margin-top: 0.5rem;
+}
+
+// Respeta a quienes prefieren menos movimiento
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}

@@ -1,0 +1,19 @@
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
+
+.header-principal {
+  background-color: $color-primario;
+  color: $color-fondo;
+  padding: 0.5rem 1rem;
+
+  @include desktop {
+    padding: 0.5rem 2rem;
+  }
+}
+
+// Enlace para saltar la navegacion (visible solo al enfocarlo con el teclado)
+.saltar-contenido {
+  background-color: $color-primario;
+  color: $color-fondo;
+  padding: 0.5rem 1rem;
+}

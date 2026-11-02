@@ -1,0 +1,22 @@
+@use "../utilities/variables" as *;
+
+.accordion-estudio {
+  // Las variables CSS de Bootstrap necesitan interpolacion #{...}
+  --bs-accordion-active-bg: #{$color-acordeon-activo};
+  --bs-accordion-active-color: #{$color-secundario};
+  --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem #{rgba($color-acento, 0.4)};
+  --bs-accordion-border-color: #{$color-acordeon-borde};
+
+  .accordion-button {
+    font-weight: 600;
+    transition: background-color $transicion, color $transicion;
+
+    &:hover {
+      background-color: $color-acordeon-hover;
+    }
+
+    &:active {
+      background-color: $color-acordeon-click;
+    }
+  }
+}

@@ -1,0 +1,33 @@
+@use "../utilities/mixins" as *;
+
+// Lista de tarjetas: 1 columna en movil, 2 en tablet y 3 en escritorio
+.listado-cards {
+  list-style: none;
+  padding-left: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+
+  @include tablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include desktop {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  // Variante: 2 columnas tambien en escritorio (proyectos)
+  &.listado-cards--dos {
+    @include desktop {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  > li {
+    min-width: 0;
+  }
+
+  .tarjeta-articulo {
+    height: 100%;
+  }
+}

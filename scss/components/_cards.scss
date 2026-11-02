@@ -1,0 +1,51 @@
+@use "../utilities/variables" as *;
+
+.tarjeta-articulo {
+  background-color: $color-blanco;
+  padding: 1.5rem;
+  border-radius: $radio-borde;
+  border-left: $ancho-acento solid $color-acento;
+  transition: transform $transicion, box-shadow $transicion, border-left-color $transicion;
+
+  &:hover,
+  &:focus-within {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba($color-primario, 0.15);
+    border-left-color: $color-secundario;
+  }
+
+  &:active {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 8px rgba($color-primario, 0.2);
+  }
+
+  ul,
+  ol {
+    margin-left: 1.5rem;
+    padding-left: 0;
+  }
+
+  li {
+    margin-bottom: 0.4rem;
+  }
+
+  a {
+    color: $color-secundario;
+    text-underline-offset: 0.2em;
+    transition: color $transicion;
+
+    &:hover,
+    &:focus-visible {
+      color: $color-primario;
+    }
+  }
+
+  img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: $radio-imagen;
+    display: block;
+    margin-bottom: 1rem;
+  }
+}

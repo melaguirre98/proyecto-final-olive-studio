@@ -1,0 +1,62 @@
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
+
+// Un grid-area por seccion: las clases .area-* se generan con @each
+$areas: hero, galeria, servicios, intro, lista, proceso, historia, valores, formulario, datos;
+
+@each $area in $areas {
+  .area-#{$area} {
+    grid-area: $area;
+  }
+}
+
+.contenido-principal {
+  max-width: $ancho-contenido;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+
+  @include tablet {
+    padding: 0 2rem;
+    align-items: start;
+  }
+
+  @include desktop {
+    max-width: $ancho-contenido-grande;
+    gap: 2.5rem;
+  }
+}
+
+// Una variante por pagina (deben ir despues de .contenido-principal)
+.pagina-home {
+  @include pagina(
+    ("hero" "galeria" "servicios"),
+    ("hero" "galeria" "servicios"),
+    ("hero galeria" "servicios servicios"),
+    1fr,
+    1fr 1fr
+  );
+}
+
+.pagina-servicios {
+  @include pagina(("intro" "lista" "proceso"), ("intro" "lista" "proceso"), ("intro" "lista" "proceso"));
+}
+
+.pagina-proyectos {
+  @include pagina(("intro" "lista"), ("intro" "lista"), ("intro" "lista"));
+}
+
+.pagina-estudio {
+  @include pagina(("historia" "valores"), ("historia valores"), ("historia valores"), 1fr 1fr, 2fr 1fr);
+}
+
+.pagina-contacto {
+  @include pagina(("formulario" "datos"), ("formulario datos"), ("formulario datos"), 1fr 1fr, 3fr 2fr);
+}
+
+.seccion-contenido {
+  min-width: 0;
+  @include flex-columna(1rem);
+}

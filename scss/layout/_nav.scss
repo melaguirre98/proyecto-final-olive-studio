@@ -1,0 +1,108 @@
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
+
+// Navbar de Bootstrap personalizada con la paleta propia
+.contenedor-nav {
+  max-width: $ancho-contenido-grande;
+  margin: 0 auto;
+}
+
+.brand-container {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  white-space: normal;
+  transition: opacity $transicion, transform $transicion;
+
+  img {
+    width: 50px;
+    height: auto;
+  }
+
+  .marca {
+    font-family: $fuente-marca;
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.15;
+    color: $color-fondo;
+
+    @include desktop {
+      font-size: 1.5rem;
+    }
+  }
+
+  @include hover-foco {
+    opacity: 0.85;
+    transform: scale(1.03);
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+// Animacion nativa: los links de la navbar aparecen de a uno
+@keyframes aparecer-abajo {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.nav-lista {
+  gap: 0.5rem;
+
+  .nav-item {
+    @include animacion(aparecer-abajo);
+
+    @for $i from 1 through 5 {
+      &:nth-child(#{$i}) {
+        animation-delay: $retraso-animacion * $i;
+      }
+    }
+  }
+}
+
+.nav-enlace {
+  color: $color-fondo;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: $radio-chico;
+  transition: color $transicion, background-color $transicion;
+
+  @include hover-foco {
+    color: $color-acento-claro;
+    background-color: rgba($color-fondo, 0.08);
+  }
+
+  &:active {
+    color: $color-primario;
+    background-color: $color-acento-claro;
+  }
+}
+
+.navbar .nav-link.active {
+  color: $color-acento-claro;
+}
+
+.navbar-toggler {
+  border-color: $color-acento;
+  transition: background-color $transicion, box-shadow $transicion;
+
+  &:hover {
+    background-color: rgba($color-acento, 0.2);
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 0.25rem rgba($color-acento, 0.5);
+  }
+
+  &:active {
+    background-color: rgba($color-acento, 0.4);
+  }
+}

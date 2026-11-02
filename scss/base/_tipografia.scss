@@ -1,0 +1,63 @@
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@400;500;600&display=swap');
+
+body {
+  font-family: $fuente-base;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: $color-texto;
+}
+
+// Estilos compartidos, reutilizados con @extend
+%titulo-principal {
+  font-family: $fuente-h2;
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: $color-secundario;
+  margin-bottom: 0.75rem;
+}
+
+%titulo-secundario {
+  font-family: $fuente-h3;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: $color-acento-texto;
+  margin-bottom: 0.5rem;
+}
+
+// h1 = titulo de cada pagina; .subtitulo = h2 con aspecto de titulo menor
+h1,
+h2 {
+  @extend %titulo-principal;
+}
+
+h1 {
+  font-size: 2.4rem;
+
+  @include desktop {
+    font-size: 3rem;
+  }
+}
+
+h3,
+.subtitulo {
+  @extend %titulo-secundario;
+}
+
+p {
+  margin-bottom: 1rem;
+  color: $color-texto;
+}
+
+// Texto corto sobre el titulo
+.etiqueta {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: $color-acento-texto;
+  margin-bottom: 0.25rem;
+}
