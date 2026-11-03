@@ -6,6 +6,7 @@
         <title>Contacto y presupuesto | Olive Interior Design Studio</title>
         <meta name="description" content="Pedí tu presupuesto de diseño de interiores: contanos tu proyecto y te respondemos a la brevedad. Primera consulta sin cargo.">
         <meta name="keywords" content="contacto estudio de interiorismo, presupuesto diseño de interiores, primera consulta sin cargo, consultas de decoración, agendar reunión">
+        <link rel="icon" type="image/png" href="../assets/images/favicon-olive.png">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
         <link rel="stylesheet" href="../styles/style.css">
@@ -16,7 +17,7 @@
             <nav class="navbar navbar-expand-lg" data-bs-theme="dark" aria-label="Navegación principal">
                 <div class="container-fluid contenedor-nav">
                     <a class="navbar-brand brand-container" href="../index.html">
-                        <img src="../assets/images/logo-olive-interior-design-studio.png" alt="Logo de Olive Interior Design Studio: una hoja de olivo dentro de un círculo">
+                        <img src="../assets/images/logo-olive-interior-design-studio.png" alt="Logo de Olive Interior Design Studio: una rama de olivo dentro de un círculo" width="56" height="56">
                         <span class="marca">Olive Interior Design Studio</span>
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menú de navegación">
@@ -38,9 +39,7 @@
             <section class="seccion-contenido area-formulario" data-aos="fade-up">
                 <h1>Contacto: pedí tu presupuesto de diseño de interiores</h1>
                 <p>Contanos qué querés transformar y te respondemos a la brevedad. La primera consulta es sin cargo.</p>
-                <form class="formulario-contacto" name="contacto" method="POST" data-netlify="true" netlify-honeypot="campo-trampa">
-                    <input type="hidden" name="form-name" value="contacto">
-                    <p class="visually-hidden"><label>No completar este campo: <input name="campo-trampa"></label></p>
+                <form class="formulario-contacto" action="mailto:hola@oliveinteriordesign.com.ar" method="post" enctype="text/plain" accept-charset="UTF-8">
                     <p class="campo"><label class="form-label" for="nombre">Nombre y apellido</label><input class="form-control" type="text" id="nombre" name="nombre" autocomplete="name" required></p>
                     <p class="campo"><label class="form-label" for="email">Email</label><input class="form-control" type="email" id="email" name="email" autocomplete="email" required></p>
                     <p class="campo"><label class="form-label" for="tipo">Tipo de proyecto</label>
@@ -49,9 +48,11 @@
                             <option value="ambiente">Un ambiente (living, dormitorio, cocina)</option>
                             <option value="local">Local u oficina</option>
                             <option value="otro">Otro</option>
-                    </select></p>
+                        </select>
+                    </p>
                     <p class="campo"><label class="form-label" for="mensaje">Contanos sobre tu proyecto</label><textarea class="form-control" id="mensaje" name="mensaje" rows="5" required></textarea></p>
                     <button class="btn btn-estudio align-self-start" type="submit">Enviar consulta</button>
+                    <p class="nota-formulario">Al enviar, se abre tu programa de correo con el mensaje listo para mandar.</p>
                 </form>
             </section>
             <section class="seccion-contenido area-datos" data-aos="fade-up" data-aos-delay="100">

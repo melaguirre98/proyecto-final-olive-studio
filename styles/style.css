@@ -634,3 +634,8 @@ figcaption {
   border-color: #9a4e2e;
   box-shadow: 0 0 0 0.25rem rgba(184, 106, 69, 0.35);
 }
+.formulario-contacto .nota-formulario {
+  font-size: 0.9rem;
+  color: #5f5f5a;
+  margin-bottom: 0;
+}
