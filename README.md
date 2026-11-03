@@ -2,7 +2,7 @@
 
 Sitio web estático de un estudio de diseño de interiores en Buenos Aires, desarrollado como proyecto final del curso de Desarrollo Web.
 
-**Sitio desplegado (Netlify):** https://REEMPLAZAR-POR-TU-SITIO.netlify.app
+**Sitio desplegado (Netlify):** https://olive-interior-design-studio.netlify.app
 
 ## Páginas
 - `index.html`: inicio, con galería de proyectos (carousel), servicios y consulta (modal)
